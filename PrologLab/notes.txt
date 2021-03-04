@@ -1,0 +1,44 @@
+Prolog Lab Topic Sequence
+
+1.  Prolog up and running.   Concept of Database with no assertions.
+2.  Working directory
+
+      working_directory(-X).
+      change_directory('C:\\Users\\hanks\\Documents\\GitHub\\cpsc5610-fq20\\PrologLab').
+  What does that tell us about how Prolog works?
+
+2a.  Hello world.
+
+3.  Assert by consulting a file 01.pl -- Two assertions, one a constant, one a variable.
+       Consult the file
+       Interesting one is bar(Z) 
+
+4.  Socrates -- multiple answers to man(X) and of mortal(X).  Show how multiple answers work
+       Also edit the file and consult it again -- add human + alive => person 
+	   
+4a.  Directory list problem
+
+5.  West axioms
+Notice the constants.  Use it for criminal(X) but also hostile(Z), missile(A) etc.
+Show trace.
+
+6.  04 Backtracking example.  Start with wrong notation!
+
+7.  05 numbers
+Do factorial:
+factorial(X, 1) :- X =< 1.
+factorial(X, Z) :- Y is X - 1, factorial(Y, Q), Z is Q * X.
+
+Note multiple answers -- introduce the cut.
+
+9.  Suppose we have this predicate dead (or alive for that matter) and we want to store its state in the database.
+Furthermore we have "actions" kill and resurrect.
+
+:- dynamic(dead/0).
+
+kill :- \+dead, fail!.
+kill :- asserta(dead).
+
+resurrect :- dead, retract(dead), !.
+resurrect :- fail,!.
+

@@ -1,0 +1,71 @@
+LAB PROBLEMS
+
+
+SUBMIT:  a single zip archive named prolog-lab.zip containing
+
+family.pl
+ruby.pl
+
+or both.    You must hand in a zip file even if there is only file in it.
+
+1 point for family (code must be working)
+1 point for reasonable progress on Ruby
+
+======================================
+
+FAMILY:  
+
+This is a simple example of reasoning about family relationships. 
+We are leaving out fathers, but just for this example.
+
+Assume you are given a set of facts of the form mother(x,y) -- x is the mother of y.
+
+Write definitions for 
+  * sibling(X, Y) true if X and Y are different, but have the same mother
+  * cousin(X, Y), true if X and Y are different, and X's mother and Y's mother are siblings
+  * grandchild(X, Y) true if the parent of X's parent is Y
+  * descendent(X, Y) true if there is a chain of parent relationships leading from X to Y
+
+You can use the following facts as given:
+   mother(a,b).              
+   mother(a,c).
+   mother(b,d).
+   mother(b,e).
+   mother(c,f).	
+
+Here are some tests that should succeed -- you should also manufacture 
+some tests that fail.
+
+  child(f,c).
+  sibling(b,c).
+  grandchild(e,a).
+  descendent(d,e).
+  descendent(b,a).
+  
+
+========================================
+
+RUBY'S VACATION
+
+You want to help Ruby choose which city to visit on her vacation.
+
+Ruby wants to visit a city that is either interesting, or is sunny and inexpensive. 
+
+A city is interesting to Ruby if it contains a heritage site and it has good public transportation.  
+
+Ruby is considering Rome, which is located in Italy, and Suva and Levuka which are both located in Fiji.
+
+The Coliseum is located in Rome, and it is a heritage site.  
+
+Suva also contains a heritage site.
+
+Rome's public transportation is not good, but all cities in Fiji have good
+public transportation.
+
+All cities in Fiji are inexpensive.  
+
+All cities in Italy are expensive.
+
+Suva is sunny, but Levuka is not.  
+
+Your top-level predicate should be vacation(C) which answers which cities Ruby wants to visit.   (Ruby does not have to be an argument in any of your predicates!)

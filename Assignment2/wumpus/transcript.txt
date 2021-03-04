@@ -1,0 +1,106 @@
+| ?- consult('wumpusFULL.pl').
+yes
+
+| ?- %  Scenario 1 -- get the gold and win.
+move(east), move(east), move(south).
+true ? 
+yes
+| ?- look.
+You are at 2,3
+You feel a breeze!
+
+yes
+| ?- move(south), move(west).
+
+true ? 
+
+yes
+| ?- look.
+You are at 3,2
+You smell a stench!
+You feel a breeze!
+There is gold here
+
+true ? 
+
+yes
+| ?- pickup(gold).
+
+true ? 
+
+yes
+| ?- look.
+You are at 3,2
+You are holding gold
+You smell a stench!
+You feel a breeze!
+
+yes
+| ?- move(east), move(north), move(north), move(west), move(west).
+
+true ? 
+
+yes
+| ?- look.
+You are at 1,1
+You are holding gold
+You have won!
+
+yes
+| ?- move(south).
+
+no
+| ?- 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+| ?- %  Scenario 2 -- test the wumpus repellent.
+consult('wumpusFULL.pl').
+yes
+| ?- move(south).
+
+true ?
+yes
+
+| ?- look.
+You are at 2,1
+You smell a stench!
+You feel a breeze!
+There is wumpus_repellent here
+
+true ? 
+
+(16 ms) yes
+| ?- pickup(wumpus_repellent).
+
+yes
+| ?- move(south).
+
+true ? 
+
+yes
+| ?- look.
+You are at 3,1
+You are holding wumpus_repellent
+There is wumpus here
+
+true ? 
+
+(15 ms) yes
+| ?- putdown(wumpus_repellent).
+
+yes
+| ?- look.
+You are at 3,1
+You are dead!
+There is wumpus_repellent here
+
+true ? ;
+There is wumpus here
+
+true ? ;
+
+yes
+| ?- move(north).
+
+no
+| ?- 

@@ -1,0 +1,19 @@
+Prolog Lab Topic Sequence -- Oct 19
+
+change_directory('C:\\Users\\hanks\\Documents\\GitHub\\cpsc5610-fq20\\PrologLab').
+
+1.  Review kinship example from lab
+
+
+2.  Jonas example
+
+
+7.  05 numbers
+Do factorial:
+factorial(X, 1) :- X =< 1.
+factorial(X, Z) :- Y is X - 1, factorial(Y, Q), Z is Q * X.
+
+Note multiple answers -- introduce the cut.
+
+9.  08_assert
+
